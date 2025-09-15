@@ -1,0 +1,24 @@
+import { onBankLoginPage } from '../../pages/parabank/BankLoginPage'
+import { username, password } from '../../fixtures/bankCreds'
+
+// const paraBankCreds = Cypress.env('Parabank')
+// const url = Cypress.env('Parabank')
+
+
+it.only('Positive Login Test', () => {
+    onBankLoginPage.submitLoginForm(username, password)
+    cy.url().should('include', '/parabank/overview.htm')
+    cy.get('#showOverview').contains('Accounts Overview').should('be.visible')
+})
+
+it('Negative Login Test', () => {
+    onBankLoginPage.submitLoginForm(username, password)
+    cy.get('.title').should('contain.text', 'Error!')
+    cy.get('.error').should('contain.text', 'The username and password could not be verified.')
+})
+
+it('Forgot Login info and Register buttons validation', () => {
+    cy.visit(url.BASE_URL)
+    cy.contains('Forgot login info?').should('be.visible')
+    cy.contains('Register').should('be.visible')
+})
