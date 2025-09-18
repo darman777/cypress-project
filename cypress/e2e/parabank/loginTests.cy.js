@@ -5,14 +5,14 @@ import { username, password } from '../../fixtures/bankCreds'
 // const url = Cypress.env('Parabank')
 
 
-it.only('Positive Login Test', () => {
+it('Positive Login Test', () => {
     onBankLoginPage.submitLoginForm(username, password)
     cy.url().should('include', '/parabank/overview.htm')
     cy.get('#showOverview').contains('Accounts Overview').should('be.visible')
 })
 
-it('Negative Login Test', () => {
-    onBankLoginPage.submitLoginForm(username, password)
+it.only('Negative Login Test', () => {
+    onBankLoginPage.submitLoginForm(username, 'wrongPassword')
     cy.get('.title').should('contain.text', 'Error!')
     cy.get('.error').should('contain.text', 'The username and password could not be verified.')
 })
