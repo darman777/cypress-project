@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 
-import { onLoginPage } from '../../pages/saucedemo/LoginPage.js';
+import { onSauceLoginPage } from '../../pages/saucedemo/LoginPage.js'
+const {USERNAME, PASSWORD} = Cypress.env('SauceDemo')
 
 describe('Add and Remove Items Tests', () => {
     beforeEach('Login to test application', () => {
-        onLoginPage.submitLoginForm(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+        onSauceLoginPage.submitLoginForm(USERNAME, PASSWORD);
     })
 
     it('Add all items to the cart', () => {

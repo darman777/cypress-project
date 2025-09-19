@@ -1,11 +1,12 @@
 /// <reference types="cypress" />
 
 import InventoryPage from '../../pages/saucedemo/InventoryPage';
-import { checkoutData } from '../../fixtures/checkoutData';
-import { onLoginPage } from '../../pages/saucedemo/LoginPage.js';
+import { checkoutData } from '../../fixtures/saucedemo/checkoutData';
+import { onSauceLoginPage } from '../../pages/saucedemo/LoginPage.js';
+const {USERNAME, PASSWORD} = Cypress.env('SauceDemo')
 
 beforeEach('Login to test application', () => {
-    onLoginPage.submitLoginForm(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+    onSauceLoginPage.submitLoginForm(USERNAME, PASSWORD);
 })
 
 

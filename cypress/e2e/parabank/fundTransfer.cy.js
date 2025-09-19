@@ -1,5 +1,5 @@
 import { onBankLoginPage } from '../../pages/parabank/BankLoginPage'
-import { password, username } from '../../fixtures/bankCreds'
+import { password, username } from '../../fixtures/parabank/bankCreds'
 // const paraBankCreds = Cypress.env('Parabank')
 let randomNumber = Math.floor(Math.random() * 1000)
 

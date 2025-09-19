@@ -43,11 +43,11 @@
 class LoginPage {
 
     submitLoginForm(username, password) {
-        cy.visit('/');
+        cy.visit('https://www.saucedemo.com/');
         cy.get('[data-test="username"]').type(username);
         cy.get('[data-test="password"]').type(password);
         cy.get('[data-test="login-button"]').click();
     }
 }
 
-export const onLoginPage = new LoginPage();
+export const onSauceLoginPage = new LoginPage();

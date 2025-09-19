@@ -1,6 +1,6 @@
 // cypress/e2e/parabank/registerLogin.spec.js
 const url = Cypress.env('Parabank')
-import { password, username } from '../../fixtures/bankCreds'
+import { password, username } from '../../fixtures/parabank/bankCreds'
 
 function generateRandomString(length = 6) {
     return Math.random().toString(36).substring(2, 2 + length);

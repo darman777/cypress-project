@@ -1,8 +1,8 @@
 import { onBankLoginPage } from '../../pages/parabank/BankLoginPage'
-import { username, password } from '../../fixtures/bankCreds'
+import { username, password } from '../../fixtures/parabank/bankCreds'
 
 // const paraBankCreds = Cypress.env('Parabank')
-// const url = Cypress.env('Parabank')
+const url = Cypress.env('Parabank')
 
 
 it('Positive Login Test', () => {
@@ -11,6 +11,7 @@ it('Positive Login Test', () => {
     cy.get('#showOverview').contains('Accounts Overview').should('be.visible')
 })
 
+//below test does not work due to parabank's changed credential conditions
 it.only('Negative Login Test', () => {
     onBankLoginPage.submitLoginForm(username, 'wrongPassword')
     cy.get('.title').should('contain.text', 'Error!')

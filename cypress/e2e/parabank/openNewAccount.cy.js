@@ -1,5 +1,5 @@
 import { onBankLoginPage } from '../../pages/parabank/BankLoginPage'
-import { username, password } from '../../fixtures/bankCreds'
+import { username, password } from '../../fixtures/parabank/bankCreds'
 
 beforeEach('Login to test application', () => {
     onBankLoginPage.submitLoginForm(username, password)
