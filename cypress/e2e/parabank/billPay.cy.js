@@ -1,5 +1,5 @@
 import { onBankLoginPage } from '../../pages/parabank/BankLoginPage'
-import { billPayData } from '../../fixtures/billPayData'
+import { billPayData } from '../../fixtures/parabank/billPayData'
 import { username, password } from '../../fixtures/parabank/bankCreds'
 // const paraBankCreds = Cypress.env('Parabank')
 const { payeeName, payeeAddress, payeeCity, payeeState, payeeZipCode, payeePhoneNumber, payeeAccountNumber, verifyAccount, amount } = billPayData

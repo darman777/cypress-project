@@ -14,6 +14,11 @@ module.exports = defineConfig({
         BASE_URL: 'https://parabank.parasoft.com/parabank/index.htm',
         USERNAME: 'dariusN',
         PASSWORD: 'rudy123'
+      },
+      OrangeHRM: {
+        BASE_URL: 'https://opensource-demo.orangehrmlive.com/',
+        USERNAME: 'Admin',
+        PASSWORD: 'admin123'
       }
     },
     setupNodeEvents(on, config) {

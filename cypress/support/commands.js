@@ -25,8 +25,15 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (username, password) => {
-    cy.visit('https://www.saucedemo.com/');
-    cy.get('[data-test="username"]').type(username);
-    cy.get('[data-test="password"]').type(password);
-    cy.get('[data-test="login-button"]').click();
-  });
+  cy.visit('https://www.saucedemo.com/')
+  cy.get('[data-test="username"]').type(username)
+  cy.get('[data-test="password"]').type(password)
+  cy.get('[data-test="login-button"]').click()
+});
+
+Cypress.Commands.add('loginOrangeHRM', (username, password) => {
+  cy.visit("https://opensource-demo.orangehrmlive.com/") 
+  cy.get('input[name="username"]').type(username)
+  cy.get('input[name="password"]').type(password)
+  cy.get('button[type="submit"]').click()
+})

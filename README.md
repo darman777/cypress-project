@@ -1,67 +1,108 @@
 Cypress Automation Portfolio
 
-This repository contains end-to-end (E2E) test automation projects built using Cypress. The purpose of these projects is to demonstrate skills in automated testing, page object modeling (POM), fixtures, dynamic data handling, and Cypress best practices.
+This repository contains end-to-end (E2E) test automation projects built using Cypress.
+The purpose is to showcase automation skills, including:
 
-Projects
-1. SauceDemo
+Page Object Model (POM)
 
-Website: https://www.SauceDemo.com
+Fixtures & Environment Variables
+
+Dynamic Test Data
+
+API Intercepts & Mocking
+
+Cypress Best Practices
+
+Projects:
+
+1. OrangeHRM Demo
+
+Website: OrangeHRM Demo
+
+Purpose: Demonstrate automation of employee management workflows and API mocking.
+
+Implemented Tests:
+
+Login Tests – Positive login with environment variables.
+
+Add Employee – Create a new employee and verify details.
+
+Edit Employee – Update contact details.
+
+Delete Employee – Remove an employee and validate deletion.
+
+Mock API Response – Intercept POST /api/v2/pim/employees and return a custom 400 error response.
+
+Notes:
+
+Uses fixtures for employee data.
+
+Demonstrates both UI E2E flows and API intercepts.
+
+Perfect for showing real-world HR system automation.
+
+2. SauceDemo
+
+Website: SauceDemo
 
 Purpose: Practice E2E testing on a demo e-commerce site.
 
 Implemented Tests:
 
-Login Tests – Positive and negative scenarios using credentials stored in fixtures.
+Login Tests – Positive & negative scenarios (fixtures for credentials).
 
 Checkout Flow – Add product to cart, verify prices, fill in checkout info, and confirm order completion.
 
-Data Handling – Used POM and fixtures for cleaner, reusable test code.
+Data Handling – Used POM & fixtures for reusable test code.
 
 Notes:
-SauceDemo is a simple demo site, ideal for practicing test automation flows, but it has limited complexity.
 
-2. Parabank
+Simple demo site for practicing test automation flows.
 
-Website: https://parabank.parasoft.com/parabank/index.htm
+Limited complexity compared to real e-commerce.
 
-Purpose: Demonstrate advanced automation scenarios including user registration, login, and banking operations.
+3. Parabank
+
+Website: Parabank
+
+Purpose: Demonstrate advanced automation scenarios like user registration, login, and banking operations.
 
 Implemented Tests:
 
-Auto-Register & Login – Dynamically create random users for each test run.
+Auto-Register & Login – Generate new random users dynamically.
 
-Fund Transfer – Transfer funds between accounts and verify balances.
+Fund Transfer – Transfer funds and validate balances.
 
-Bill Pay Form – Fill out bill payment forms with valid and invalid data.
+Bill Pay Form – Positive and negative test data validation.
 
-Open New Account – Create new accounts, verify account IDs in Accounts Overview.
+Open New Account – Create accounts and verify in Accounts Overview.
 
 Notes / Limitations:
 
-Parabank is a demo/testing web app, and its behavior is not fully realistic.
+Login accepts any username/password, so negative login tests don’t fail realistically.
 
-The login feature accepts any username/password, so negative login tests cannot reliably fail.
+Some data resets after refresh.
 
-Some data (accounts, balances) may reset after login or page refresh.
-
-Tests focus on demonstrating automation skills rather than verifying real-world banking functionality.
+Used mainly to show automation complexity handling.
 
 Key Features
 
-Page Object Model (POM): Organized test code for maintainability.
+Page Object Model (POM): Clean, maintainable code structure.
 
-Fixtures & Environment Variables: Used for reusable test data and credentials.
+Fixtures & Env Variables: Reusable test data and credentials.
 
-Dynamic Data: Auto-generated usernames, account numbers, and other inputs.
+Dynamic Data: Randomized inputs for better coverage.
 
-Assertions: Verified page elements, URLs, messages, and dynamic content.
+Assertions: Validate elements, URLs, messages, and content.
+
+API Intercepts: Mock requests/responses for error handling scenarios.
 
 Installation
 
 Clone the repository:
 
-git clone <https://github.com/darman777/cypress-project.git>
-cd <cypress-project>
+git clone https://github.com/darman777/cypress-project.git
+cd cypress-project
 
 
 Install dependencies:
@@ -69,27 +110,27 @@ Install dependencies:
 npm install
 
 
-Run Cypress:
+Run Cypress (UI mode):
 
 npx cypress open
 
 
-or headless mode:
+Or headless mode:
 
 npx cypress run
 
 Usage
 
-Each project (SauceDemo / Parabank) has separate tests and fixtures.
+Each project (OrangeHRM / SauceDemo / Parabank) has separate test specs & fixtures.
 
-Configure credentials and base URLs in cypress.config.js or environment variables.
+Credentials and base URLs are configured via cypress.config.js and environment variables.
 
-Tests demonstrate end-to-end flows, dynamic data usage, and error handling.
+Tests demonstrate end-to-end workflows, dynamic data, and error handling.
 
 Notes
 
-These projects are for learning and portfolio purposes.
+These projects are built for learning and portfolio purposes.
 
-Some functionality may behave unexpectedly due to the demo nature of the websites.
+Some functionality may behave unexpectedly due to the demo nature of the apps.
 
 The goal is to showcase Cypress automation skills, test structuring, and best practices.
